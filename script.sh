@@ -45,7 +45,7 @@ do
     read xprv
     echo "--------------- / RESULT / ---------------"
     echo ""
-    docker exec -ti ${containerId} curl --location \'http://localhost:3000/add_wallet\' --header \'Content-Type: application/json\' --data \'{\"service\":\"${service}\", \"xpub\":\"${xpub}\", \"hotWallet\":\"\", \"xpriv\":\"${xprv}\", \"coldWallet\":\"\", \"mnemonic\":\"\"}\'
+    docker exec -ti ${containerId} curl --location "http://localhost:3000/add_wallet" --header "Content-Type: application/json" --data '{"service":"'"${service}"'", "xpub":"'"${xpub}"'", "hotWallet":"", "xpriv":"'"${xprv}"'", "coldWallet":"", "mnemonic":""}'
   elif [ $choice -eq 5 ]; then
     isLoop=false
   else
